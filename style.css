@@ -1,0 +1,140 @@
+:root {
+  --neon-color: #ffffff;
+}
+
+/* Default (can be overridden by body class) */
+body.white {
+  --neon-color: #ffffff;
+}
+body.black {
+  --neon-color: #000000;
+}
+body.red {
+  --neon-color: #ff1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: var(--neon-color);
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--neon-color);
+}
+
+header h1 {
+  color: var(--neon-color);
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px var(--neon-color);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #141414;
+  padding: 10px;
+}
+
+nav a {
+  color: var(--neon-color);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--neon-color);
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px var(--neon-color);
+}
+
+.card h2 {
+  color: var(--neon-color);
+}
+
+footer {
+  background-color: #1f1f1f;
+  text-align: center;
+  padding: 15px;
+  color: #aaa;
+  border-top: 2px solid var(--neon-color);
+}
+.map-img {
+  display: none;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00e6e6;
+}
+
+#mapToggle:not(:checked) ~ .map-wrapper #map1 {
+  display: block;
+}
+
+#mapToggle:checked ~ .map-wrapper #map2 {
+  display: block;
+}
+.zoom-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.zoom-container input[type="checkbox"] {
+  margin-top: 10px;
+  accent-color: #00e6e6;
+}
+
+.zoom-image {
+  width: 100%;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Hover Zoom */
+.zoom-container:hover .zoom-image {
+  transform: scale(1.1);
+}
+
+/* Checkbox-controlled Zoom */
+#zoomToggle:checked ~ .zoom-image {
+  transform: scale(1.5);
+}
+.map-img {
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 0 15px #00e6e6;
+}
+
+#mapToggle:not(:checked) ~ .map-wrapper #map1 {
+  display: block;
+}
+
+#mapToggle:checked ~ .map-wrapper #map2 {
+  display: block;
+}

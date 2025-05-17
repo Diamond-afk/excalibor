@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eSports Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+      color: #fff;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00e6e6;
+    }
+
+    header h1 {
+      color: #00e6e6;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #141414;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00e6e6;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 230, 230, 0.2);
+    }
+
+    .card h2 {
+      color: #00e6e6;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+      border-top: 2px solid #00e6e6;
+    }
+
+    .map-img {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 0 15px #00e6e6;
+    }
+
+    #mapToggle:not(:checked) ~ .map-wrapper #map1 {
+      display: block;
+    }
+
+    #mapToggle:checked ~ .map-wrapper #map2 {
+      display: block;
+    }
+
+    .players-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .player-card {
+      width: 125px;
+      background-color: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 10px #00e6e6;
+      cursor: pointer;
+    }
+
+.stats-card {
+      width: 100%;
+    height: 100%;
+      padding: 10px;
+      background-color: #111;
+      color: #00e6e6;
+      font-weight: bold;;
+    }
+.big-words {
+    font-size: 2.5rem;
+}      
+    .player-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .player-card span {
+      display: block;
+      padding: 10px;
+      background-color: #111;
+      color: #00e6e6;
+      font-weight: bold;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup .content {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00e6e6;
+      text-align: center;
+      color: #00e6e6;
+    }
+
+    .popup .close {
+      margin-top: 20px;
+      background: #00e6e6;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>eSports Hub</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="teams.html">Teams</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="players.html">Players</a>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2>Team Players</h2>
+      <div class="players-grid">
+        <div class="player-card" onclick="document.getElementById('popup1').style.display='flex'">
+          <img src="images/kailogo.jpg" alt="Player 1">
+          <span>Lil Indianfn</span>
+        </div>
+        <div class="player-card" onclick="document.getElementById('popup2').style.display='flex'">
+          <img src="images/oliverlogo.jpeg" alt="Player 2">
+          <span>Buboy</span>
+        </div>
+           <div class="player-card" onclick="document.getElementById('popup3').style.display='flex'">
+                <img src="images/maximeuslogo.jpeg" alt="Player 3">
+          <span>maximeussr</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="popup1">
+        
+      <div class="content">
+          
+        <h2>Lil Indianfn stats:</h2>
+        <p>Placement in clan: #2
+        Rank: Unranked
+        Peak Rank: Diamond II
+        Skill type: Aim
+        </p>
+          <h2>92 Overall</h2>
+           
+        <button class="close" onclick="document.getElementById('popup1').style.display='none'">Close</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup2">
+      <div class="content">
+        <h2>Buboy</h2>
+        <p>Placement in clan: #3
+        Rank: Silver II
+        Peak Rank: Elite
+        Skill type: Intilectual
+            </p>
+        <button class="close" onclick="document.getElementById('popup2').style.display='none'">Close</button>
+      </div>
+    </div>
+      <div class="popup" id="popup3">
+      <div class="content">
+        <h2>maximeussr stats:</h2>
+        <p>Placement in clan: #1
+        Rank: Silver II
+        Peak Rank: Elite
+        Skill type: Mechanical
+            
+        </p>
+          <h2>97 Overall</h2>
+        <button class="close" onclick="document.getElementById('popup3').style.display='none'">Close</button>
+          
+               </div>
+    </div>
+      
+
+
+  <footer>
+    &copy; 2025 Excalibor eSports. All rights reserved.
+      <div class="players-grid">
+        <div class="stats-card"
+           
+      <h2>Lil Indianfn Full Stats:</h2>
+
+         <img src="images/KaiBestPlacement.png" alt="Player 1">
+                 
+          <img src="images/KaiStatsSoFar.png" alt="Player 2">
+             </div>
+             <div class="stats-card"
+     <h2>maximeussr Full Stats:</h2>
+           
+                      <img src="images/maximeplacementsofar.png" alt="Player 1">
+                 
+          <img src="images/maximestatssofar.png" alt="Player 2">
+  </div>
+          </div>
+  </footer>
+</body>
+</html>
